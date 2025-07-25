@@ -11,12 +11,9 @@ class CryptoAsset {
     required this.price,
   });
 
-  factory CryptoAsset.fromJson(Map<String, dynamic> json) {
-    return CryptoAsset(
-      id: json['id'],
-      symbol: json['symbol'],
-      name: json['name'],
-      price: (json['current_price'] ?? 0).toDouble(),
-    );
-  }
+  CryptoAsset.fromJson(Map<String, dynamic> json)
+      : id = json['id'],
+        symbol = json['symbol'],
+        name = json['name'],
+        price = (json['current_price'] ?? 0).toDouble();
 }

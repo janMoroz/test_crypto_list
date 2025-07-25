@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:test_crypto_list/utils.dart' as u;
 import '../../models/crypto_asset.dart';
 
 class CryptoListItem extends StatelessWidget {
@@ -15,23 +16,42 @@ class CryptoListItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 20),
-      child: ListTile(
-        leading: Container(
-          decoration: BoxDecoration(
-            color: color.withOpacity(0.10),
-            borderRadius: BorderRadius.circular(18),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Wrap(
+            crossAxisAlignment:WrapCrossAlignment.center,
+            spacing: 16,
+            children: [
+              Container(
+                decoration: BoxDecoration(
+                  color: color.withOpacity(0.10),
+                  borderRadius: BorderRadius.circular(18),
+                ),
+                width: 56,
+                height: 56,
+              ),
+              Text(
+                asset.symbol.toUpperCase(),
+                style: const TextStyle(
+                  fontFamily: 'SF Pro Text',
+                  fontWeight: FontWeight.w600,
+                  fontSize: 17,
+                  letterSpacing: -0.41,
+                ),
+              ),
+            ],
           ),
-          width: 56,
-          height: 56,
-        ),
-        title: Text(
-          asset.name,
-          style: const TextStyle(fontWeight: FontWeight.w500),
-        ),
-        trailing: Text(
-          '\$${asset.price.toStringAsFixed(2)}',
-          style: const TextStyle(fontWeight: FontWeight.bold),
-        ),
+          Text(
+            u.formatPrice(asset.price),
+            style: const TextStyle(
+              fontFamily: 'SF Pro Text',
+              fontWeight: FontWeight.w600,
+              fontSize: 17,
+              letterSpacing: -0.41,
+            ),
+          ),
+        ],
       ),
     );
   }

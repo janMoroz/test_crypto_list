@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../models/crypto_asset.dart';
 import '../../service/crypto_service.dart';
-import '../../utils.dart';
+import '../../utils.dart' as u;
 import 'crypto_list_item.dart';
 
 class CryptoListView extends StatefulWidget {
@@ -44,7 +44,7 @@ class _CryptoListViewState extends State<CryptoListView> {
       setState(() {
         _assets.addAll(newAssets);
         _colors.addAll(
-          List.generate(newAssets.length, (_) => generateRandomColor()),
+          List.generate(newAssets.length, (_) => u.generateRandomColor()),
         );
         _page++;
       });
