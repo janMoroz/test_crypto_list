@@ -7,14 +7,8 @@ class CryptoListScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          'Crypto List',
-          style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-        ),
-      ),
-      body: const CryptoListView(),
+    return const Scaffold(
+      body: CryptoListView(),
     );
   }
 }
