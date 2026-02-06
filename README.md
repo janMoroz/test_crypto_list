@@ -1,3 +1,3 @@
-# test_crypto_list
+# crypto_list
 
 A new Flutter project.
