@@ -20,19 +20,28 @@ class CryptoListItem extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Wrap(
-            crossAxisAlignment:WrapCrossAlignment.center,
+            crossAxisAlignment: WrapCrossAlignment.center,
             spacing: 16,
             children: [
               Container(
+                alignment: Alignment.center,
                 decoration: BoxDecoration(
-                  color: color.withOpacity(0.10),
+                  color: color.withOpacity(0.40),
                   borderRadius: BorderRadius.circular(18),
                 ),
                 width: 56,
                 height: 56,
+                child: Text(
+                  asset.symbol.toUpperCase(),
+                  style: const TextStyle(
+                    fontFamily: 'SF Pro Text',
+                    fontWeight: FontWeight.w600,
+                    fontSize: 14,
+                  ),
+                ),
               ),
               Text(
-                asset.symbol.toUpperCase(),
+                asset.name.toUpperCase(),
                 style: const TextStyle(
                   fontFamily: 'SF Pro Text',
                   fontWeight: FontWeight.w600,
